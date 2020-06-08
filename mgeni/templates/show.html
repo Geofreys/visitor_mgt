@@ -1,0 +1,35 @@
+<table>
+    <form method="POST" action="/search">
+    {% csrf_token %}
+
+        <tr>
+            <td><input name="name"></td>
+            <td><button type="submit">Search</button></td>
+        </tr>
+    </form>
+    <tr>
+    <th>Name</th>
+    <th>ID_no</th>
+    <th>Email</th>
+    <th>Contact</th>
+    <th>Residence</th>
+    <th>Reason</th>
+    </tr>
+
+    {% for i in visitor %}
+    <tr>
+        <td>{{ i.name }}</td>
+        <td>{{ i.ID_no }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.contact }}</td>
+        <td>{{ i.residence }}</td>
+        <td>{{ i.reason }}</td>
+        <td>
+            <a href="edit/{{ i.id }}">Edit</a>
+        </td>
+        <td>
+            <a href="delete/{{ i.id }}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

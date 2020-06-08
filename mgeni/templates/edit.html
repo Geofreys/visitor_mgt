@@ -1,0 +1,37 @@
+<form method="POST" action="/update/{{ visitor.id }}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td><input name="name" required value="{{ visitor.name }}">
+            </td>
+        </tr>
+        <tr>
+            <td><input name="ID_no" required value="{{ visitor.ID_no }}">
+            </td>
+        </tr>
+        <tr>
+            <td><input name="email" required value="{{ visitor.email }}">
+            </td>
+        </tr>
+        <tr>
+            <td><input name="contact" required value="{{ visitor.contact }}"> 
+            </td>
+        </tr>
+        <tr>
+            <td><input name="residence" required value="{{ visitor.residence }}">
+            </td>
+        </tr>
+        <tr>
+            <td><input name="reason" required value="{{ visitor.reason }}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Update</button>
+            </td>
+        </tr>
+    </table>
+
+
+
+</form>
